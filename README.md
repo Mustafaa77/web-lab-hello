@@ -1,16 +1,20 @@
-# Web LAB-1
+# Web Tasarımı ve Programlama Laboratuvarları
 
-## Hakkinda
-Bu proje, Web Tasarimi ve Programlama dersi LAB-1 kapsaminda Vite + React + TypeScript kullanilarak olusturulmustur.
+## Hakkında
+Bu proje, Web Tasarımı ve Programlama dersi kapsamında geliştirilmektedir.
+- **LAB-1:** Vite + React + TypeScript ile modern web proje altyapısı kurulumu.
+- **LAB-2:** Semantik HTML5 iskeleti, Erişilebilirlik (a11y) standartları ve doğrulamalı İletişim Formu entegrasyonu.
 
-## Gelistirici
+## Geliştirici
 **Ad Soyad:** Mustafa Dürü
-**Ogrenci No:** 235541012
+**Öğrenci No:** 235541012
+**Üniversite:** Fırat Üniversitesi
 
-## Kullanilan Teknolojiler
-* React 18
+## Kullanılan Teknolojiler
+* React 18 & Vite
 * TypeScript
-* Vite
+* Semantik HTML5 & CSS
+* Erişilebilirlik (a11y) Prensipleri
 
 ## Kurulum
 ```bash
