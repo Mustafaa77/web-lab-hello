@@ -21,7 +21,7 @@ function App() {
           <h2>Hakkimda</h2>
           <div className="about-content">
             <figure>
-              <img src="/profil.jpg" alt="Mustafa Dürü'nün vesikalik fotografi" width="150" />
+              <img src="/profil.jpg" alt=" " width="150" />
             </figure>
             <div>
               <p>Merhaba, ben Fırat Üniversitesi'nde okuyan bir öğrenciyim. Modern web ve mobil teknolojileri üzerine çalışıyorum.</p>
