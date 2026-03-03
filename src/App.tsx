@@ -3,11 +3,10 @@ import './App.css';
 function App() {
   return (
     <>
-      {/* Skip Link - Erişilebilirlik için (Sadece Tab ile görünür) */}
       <a href="#main-content" className="skip-link">Ana icerige atla</a>
 
       <header>
-        <h1>Mustafa Dürü - Kisisel Portfolyo</h1>
+        <div className="site-title">Mustafa Dürü - Kisisel Portfolyo</div>
         <nav aria-label="Ana navigasyon">
           <ul>
             <li><a href="#hakkimda">Hakkimda</a></li>
@@ -20,29 +19,44 @@ function App() {
       <main id="main-content">
         <section id="hakkimda">
           <h2>Hakkimda</h2>
-          <figure>
-            {/* Profil fotoğrafı alanı. alt metni erişilebilirlik (ally) için zorunludur */}
-            <img src="/profil.jpg" alt="" width="150" />
-            <figcaption>Mustafa Dürü</figcaption>
-          </figure>
-          <p>Merhaba, ben Fırat Üniversitesi'nde okuyan bir öğrenciyim. Modern web ve mobil teknolojileri üzerine çalışıyorum.</p>
-          <ul>
-            <li>React & Vite</li>
-            <li>TypeScript</li>
-            <li>Semantik HTML5</li>
-          </ul>
+          <div className="about-content">
+            <figure>
+              <img src="/profil.jpg" alt="Mustafa Dürü'nün vesikalik fotografi" width="150" />
+            </figure>
+            <div>
+              <p>Merhaba, ben Fırat Üniversitesi'nde okuyan bir öğrenciyim. Modern web ve mobil teknolojileri üzerine çalışıyorum.</p>
+              {/* Flexbox ile yan yana dizeceğimiz beceri etiketleri */}
+              <ul className="skill-tags" role="list" aria-label="Beceri etiketleri">
+                <li>React & Vite</li>
+                <li>TypeScript</li>
+                <li>Semantik HTML5</li>
+                <li>CSS Flex/Grid</li>
+              </ul>
+            </div>
+          </div>
         </section>
 
         <section id="projeler">
           <h2>Projelerim</h2>
-          <article>
-            <h3>Proje 1: E-Ticaret Platformu</h3>
-            <p>Kullanıcıların ürün alıp satabildiği modern bir web uygulaması.</p>
-          </article>
-          <article>
-            <h3>Proje 2: Kişisel Blog Sitesi</h3>
-            <p>Dinamik içerik yönetimine sahip, SEO uyumlu blog projesi.</p>
-          </article>
+          {/* CSS Grid ile ızgara yapacağımız alan */}
+          <div className="project-grid">
+            <article className="project-card">
+              <h3>Proje 1: E-Ticaret Platformu</h3>
+              <p>Kullanıcıların ürün alıp satabildiği modern bir web uygulaması.</p>
+              <ul className="skill-tags">
+                <li>React</li>
+                <li>TypeScript</li>
+              </ul>
+            </article>
+            <article className="project-card">
+              <h3>Proje 2: Kişisel Blog Sitesi</h3>
+              <p>Dinamik içerik yönetimine sahip, SEO uyumlu blog projesi.</p>
+              <ul className="skill-tags">
+                <li>HTML5</li>
+                <li>CSS3</li>
+              </ul>
+            </article>
+          </div>
         </section>
 
         <section id="iletisim">

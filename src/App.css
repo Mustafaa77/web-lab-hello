@@ -1,34 +1,95 @@
 /* Genel sifirlama */
 @import './styles/tokens.css';
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { 
-  font-family: system-ui, sans-serif; 
-  line-height: 1.6; 
-  background-color: #f4f4f9; 
-  color: #333; 
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Sayfayi ortalama ve genislik siniri */
-#root {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+html {
+  scroll-behavior: smooth;
 }
 
-header, section, footer {
-  margin-bottom: 2rem;
+body {
+  font-family: var(--font-sans);
+  font-size: var(--text-base); /* Fluid Typography burada devreye giriyor! */
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
 }
 
-ul { margin-left: 1.5rem; }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+/* ===== HEADER & NAVIGASYON (Flexbox - Mobil Görünüm) ===== */
+header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  align-items: center;
+  padding: var(--space-md) var(--space-lg);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+nav ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+  gap: var(--space-sm);
+}
+
+nav a {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: var(--space-xs) var(--space-md);
+  color: var(--color-text);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+nav a:hover, nav a:focus {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+}
+
+/* ===== TOOLBAR / BECERI ETIKETLERI (Flexbox) ===== */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap; /* Sığmazsa alt satıra kaydır */
+  gap: var(--space-sm);
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-md);
+  justify-content: center;
+}
+
+.skill-tags li {
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--text-sm);
+}
 
 /* Skip link: normalde gizli, Tab ile gorunur */
 .skip-link {
   position: absolute;
   top: -100px;
   left: 0;
-  background: #1E3A8A;
+  background: var(--color-primary);
   color: white;
   padding: 8px 16px;
   z-index: 100;
@@ -36,25 +97,105 @@ ul { margin-left: 1.5rem; }
 .skip-link:focus { top: 0; }
 
 /* Focus gostergesi - ASLA kaldirma */
-:focus { outline: 2px solid #2563EB; outline-offset: 2px; }
+:focus { outline: 2px solid var(--color-secondary); outline-offset: 2px; }
+/* ===== PROJE KARTLARI (CSS Grid) ===== */
+.project-grid {
+  display: grid;
+  gap: var(--space-xl);
+  /* Sihirli satir: ekran genisligine gore otomatik yan yana dizer! */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
 
-/* Form stilleri */
-fieldset { padding: 1rem; border-radius: 4px; border: 1px solid #ccc;}
-legend { font-weight: bold; padding: 0 5px; }
-.form-group { margin-bottom: 1rem; }
-label { display: block; margin-bottom: 0.25rem; font-weight: 500;}
-input, textarea, select {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
 }
-button {
-  padding: 0.5rem 1rem;
-  background-color: #1E3A8A;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
 }
-.error-msg { color: red; font-size: 0.85rem; }
+
+.project-card h3,
+.project-card p,
+.project-card .skill-tags {
+  padding: 0 var(--space-lg);
+}
+
+.project-card h3 {
+  margin-top: var(--space-md);
+  font-size: var(--text-lg);
+}
+
+.project-card p {
+  color: var(--color-muted);
+  flex-grow: 1; /* Icerik farkli uzunlukta olsa bile kartlari hizalar */
+}
+
+.project-card .skill-tags {
+  padding-bottom: var(--space-lg);
+  margin-top: auto;
+}
+
+/* ========================================
+   TABLET (640px ve uzeri)
+======================================== */
+@media (min-width: 640px) {
+  /* Menüyü yan yana al */
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  nav ul {
+    flex-direction: row;
+    width: auto;
+  }
+  
+  nav a {
+    display: inline-block;
+    width: auto;
+  }
+
+  section {
+    padding: var(--space-2xl) var(--space-xl);
+  }
+
+  /* Hakkimda kismini yatay yap */
+  .about-content {
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+    align-items: flex-start;
+    gap: var(--space-xl);
+  }
+
+  .about-content figure {
+    flex-shrink: 0;
+  }
+
+  button[type="submit"] {
+    width: auto;
+  }
+}
+
+/* ========================================
+   MASAUSTU (1024px ve uzeri)
+======================================== */
+@media (min-width: 1024px) {
+  /* Iste seni rahatsiz eden "kenarda kalma" sorununu cozen kod! 
+     Icerik genisligini 1200px ile sinirlar ve ekrani ortalar */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  section {
+    padding: var(--space-3xl) var(--space-xl);
+  }
+}
