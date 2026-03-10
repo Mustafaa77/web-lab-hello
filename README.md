@@ -3,8 +3,9 @@
 ## Hakkında
 Bu proje, Web Tasarımı ve Programlama dersi kapsamında geliştirilmektedir.
 - **LAB-1:** Vite + React + TypeScript ile modern web proje altyapısı kurulumu.
-- **LAB-2:** Semantik HTML5 iskeleti, Erişilebilirlik (a11y) standartları ve doğrulamalı İletişim Formu entegrasyonu.
-- **LAB-3:** Mobile-first yaklaşımı ile tam duyarlı (responsive) tasarım, CSS Grid/Flexbox layout, Design Tokens ve Akıcı Tipografi (Fluid Typography) entegrasyonu.
+- **LAB-2:** Semantik HTML5 iskeleti, Erişilebilirlik (a11y) standartları ve doğrulamalı İletişim Formu.
+- **LAB-3:** Mobile-first yaklaşımı, CSS Grid/Flexbox layout ve Design Tokens.
+- **LAB-4:** Tailwind CSS v4 entegrasyonu, Utility-First yaklaşım, Custom Component mimarisi (Button, Input, Card, Alert), Dark Mode desteği ve UI Kit vitrin sayfası oluşturulması.
 
 ## Geliştirici
 **Ad Soyad:** Mustafa Dürü
@@ -13,10 +14,11 @@ Bu proje, Web Tasarımı ve Programlama dersi kapsamında geliştirilmektedir.
 
 ## Kullanılan Teknolojiler
 * React 18 & Vite & TypeScript
+* Tailwind CSS v4
+* Component Tabanlı Mimari
 * Semantik HTML5 & Erişilebilirlik (a11y)
-* CSS Flexbox & CSS Grid
-* CSS Custom Properties (Design Tokens) & Fluid Typography (`clamp()`)
 
-## Kurulum
+## Kurulum ve Çalıştırma
 ```bash
 npm install
+npm run dev
