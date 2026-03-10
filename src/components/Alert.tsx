@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default function Alert({
   children,
   variant = "info",

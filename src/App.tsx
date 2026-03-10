@@ -105,7 +105,7 @@ export default function App() {
             <form className="space-y-4" action="#" method="POST" noValidate>
               
               <Input id="name" label="Ad Soyad" required />
-              <Input id="email" label="E-posta" type="email" required />
+              <Input id="email" label="E-posta" type="email" required helpText="Size geri donus yapabilmemiz icin gecerli bir e-posta giriniz." />
               
               <div className="space-y-1">
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">

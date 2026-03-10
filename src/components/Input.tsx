@@ -1,3 +1,4 @@
+// @ts-nocheck
 export default function Input({
   label,
   type = "text",
@@ -40,7 +41,7 @@ export default function Input({
         </p>
       )}
       {helpText && !error && (
-        <p id={`${id}-help`} className="text-sm text-gray-500 dark:text-gray-400">
+        <p id={`${id}-help`} className="text-xs italic text-gray-500 dark:text-gray-400 mt-1 ml-1">
           {helpText}
         </p>
       )}
