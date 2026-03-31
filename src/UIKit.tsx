@@ -1,8 +1,8 @@
 // @ts-nocheck
-import Button from './components/Button';
-import Input from './components/Input';
-import Card from './components/Card';
-import Alert from './components/Alert';
+import Button from './components/ui/Button';
+import Input from './components/ui/Input';
+import Card from './components/ui/Card';
+import Alert from './components/ui/Alert';
 
 export default function UIKit() {
   // Karanlik tema acma/kapatma fonksiyonu
